@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="32" viewBox="0 0 240 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- V -->
+  <path d="M0 4l12 24h4l12-24h-8l-6 12-6-12H0z" fill="white"/>
+  <!-- E -->
+  <path d="M32 4h24v6H40v5h14v6H40v5h16v6H32V4z" fill="white"/>
+  <!-- K -->
+  <path d="M64 4h8v9l12-9h10l-14 12 14 12h-10l-12-9v9h-8V4z" fill="white"/>
+  <!-- T -->
+  <path d="M96 4h24v6h-8v22h-8V10h-8V4z" fill="white"/>
+  <!-- O -->
+  <path d="M128 4h20v24h-20V4zm8 6v12h4V10h-4z" fill="white"/>
+  <!-- G -->
+  <path d="M156 4h24v6h-16v5h12v6h-12v5h16v6h-24V4z" fill="white"/>
+  <!-- R -->
+  <path d="M188 4h24v14h-14l12 10h-10l-12-10v10h-8V10h14V4z" fill="white"/>
+  <!-- A -->
+  <path d="M220 28l8-24h8l8 24h-8l-1-4h-6l-1 4h-8zm12-10l-2-6-2 6h4z" fill="white"/>
+</svg> 
