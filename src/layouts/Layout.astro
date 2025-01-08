@@ -1,0 +1,65 @@
+---
+import '@fontsource/inter';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Vektogram - Enterprise-grade SaaS solutions for modern businesses. Discover our suite of digital transformation tools and services." />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-background text-primary min-h-screen">
+    <nav class="fixed w-full top-0 z-50 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">Vektogram</a>
+        <div class="space-x-6">
+          <a href="#products" class="hover:text-accent transition-colors">Products</a>
+          <a href="mailto:admin@vektogram.com" class="hover:text-accent transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-20">
+      <slot />
+    </main>
+    <footer class="py-8 px-6 text-center text-secondary">
+      <p>© {new Date().getFullYear()} Vektogram. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 255, 0, 0;
+    --accent-light: 255, 100, 100;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    animation: fade-in 1s ease-out;
+  }
+</style> 

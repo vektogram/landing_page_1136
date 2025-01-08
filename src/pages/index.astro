@@ -1,16 +1,126 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const products = [
+  {
+    name: 'Mellownastic',
+    description: 'Experience seamless digital solutions',
+    domain: 'mellownastic.com'
+  },
+  {
+    name: 'Glidech',
+    description: 'Innovative tech solutions',
+    domain: 'glidech.com'
+  },
+  {
+    name: 'Tualie',
+    description: 'Next-generation software',
+    domain: 'tualie.com'
+  },
+  {
+    name: 'Basedcally',
+    description: 'Revolutionary digital tools',
+    domain: 'basedcally.com'
+  },
+  {
+    name: 'PearlRank',
+    description: 'Advanced analytics platform',
+    domain: 'pearlrank.com'
+  },
+  {
+    name: 'Kiroflow',
+    description: 'Streamlined workflows',
+    domain: 'kiroflow.com'
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Vektogram - Technology Solutions">
+  <div class="min-h-screen flex flex-col">
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="text-center space-y-8 fade-in">
+        <h1 class="text-6xl md:text-8xl font-light tracking-tighter">
+          powering digital
+          <br />
+          innovation.
+        </h1>
+        <p class="text-secondary text-xl md:text-2xl">
+          enterprise-grade SaaS solutions
+        </p>
+        <a
+          href="#products"
+          class="inline-block text-accent hover:text-white transition-colors duration-300"
+        >
+          explore our products
+        </a>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section id="products" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          products.map((product) => (
+            <div class="aspect-square bg-zinc-900 rounded-lg p-8 flex flex-col justify-between hover:bg-zinc-800 transition-colors duration-300">
+              <div class="space-y-4">
+                <div class="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center">
+                  <span class="text-2xl">{product.name[0]}</span>
+                </div>
+                <h3 class="text-2xl font-light">{product.name}</h3>
+                <p class="text-secondary">{product.description}</p>
+              </div>
+              <a 
+                href={`https://${product.domain}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-accent hover:text-white transition-colors inline-block mt-4"
+              >
+                Visit {product.domain} →
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-6 bg-zinc-900">
+      <div class="max-w-3xl mx-auto text-center space-y-8">
+        <h2 class="text-4xl font-light">Enterprise Solutions</h2>
+        <p class="text-secondary text-lg">
+          Vektogram delivers cutting-edge SaaS products designed for modern businesses.
+          Our suite of solutions includes advanced analytics, workflow automation, and
+          digital transformation tools.
+        </p>
+        <a 
+          href="mailto:admin@vektogram.com"
+          class="inline-block text-accent hover:text-white transition-colors"
+        >
+          Contact Us →
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate products on scroll
+  gsap.utils.toArray('.aspect-square').forEach((box: any) => {
+    gsap.from(box, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: box,
+        start: 'top bottom-=100',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+</script>
